@@ -59,8 +59,8 @@ def mapper(sequence): #mapper convierte el contenido del archivo en una secuenci
     for _, text in sequence: #El guion bajo _ se utiliza para ignorar la primera parte de la tupla, que es el nombre del archivo, text contiene el contenido del archivo
         words = text.split() #Divide el contenidio del archivo (text) en palabras utilizando split
         for word in words: # Itera sobre todas las palabras en words
-            word = word.replace (",","")
-            word = word.replace (".","")
+            word = word.replace (",","") # Quita comas
+            word = word.replace (".","") # Quita puntos
             word = word.lower() # Deja todas las palabras en minúsculas
             new_sequence.append((word,1)) #El 1 es la ocurrencia de la palabra
     return new_sequence
@@ -185,7 +185,7 @@ def save_output(output_directory, sequence):
 # entregado como parámetro.
 #
 def create_marker(output_directory):
-    with open (output_directory + "/SUCESS","w") as file:
+    with open (output_directory + "/_SUCCESS","w") as file:
         file.write ("")
 
 # sequence = load_input("input")
